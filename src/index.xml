@@ -20,7 +20,6 @@
 -->
 
 <refentry id="bus1">
-
   <refentryinfo>
     <title>bus1</title>
     <productname>bus1</productname>
@@ -33,19 +32,22 @@
   </refentryinfo>
 
   <refmeta>
-    <refentrytitle>bus1</refentrytitle>
+    <refentrytitle>index</refentrytitle>
     <manvolnum>7</manvolnum>
   </refmeta>
 
   <refnamediv>
     <refname>bus1</refname>
-    <refpurpose>bus1 Overview</refpurpose>
+    <refpurpose>Overview</refpurpose>
   </refnamediv>
 
   <refsect1>
     <title>Description</title>
-
     <para>Somewhere, something incredible is waiting to be known.</para>
   </refsect1>
 
+  <refsect1>
+    <title>See Also</title>
+      <para><ulink url="https://github.com/bus1">Github Project</ulink></para>
+  </refsect1>
 </refentry>
