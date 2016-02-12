@@ -39,11 +39,11 @@
       <xsl:attribute name="href">
         <xsl:text>index.html</xsl:text>
       </xsl:attribute>
-      <xsl:text>Index </xsl:text>
+      <img src="bus1.png" alt="bus1" style="width:48px;height:48px;"/>
     </a>
 
     <span style="float:right">
-      <xsl:text>bus1 </xsl:text>
+      <xsl:text>Version </xsl:text>
       <xsl:value-of select="$bus1.version"/>
     </span>
     <hr/>

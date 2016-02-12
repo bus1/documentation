@@ -38,9 +38,9 @@ all: html
 .PHONY: all
 
 push: html
-	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
+	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME src/bus1.png html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
-	  git add *.html && \
+	  git add *.html *.png && \
 	  git commit -a -m 'Update from "docs" repository' && \
 	  git push )
 .PHONY: push
