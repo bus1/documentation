@@ -16,6 +16,3 @@ GITWEB:
 LICENSE:
         LGPLv2.1+ (LICENSE.LGPL2.1)
         See COPYING for details.
-
-BOOTUP EXAMPLE:
-        https://github.com/bus1/docs/blob/master/bootup.txt
