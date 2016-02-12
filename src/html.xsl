@@ -22,7 +22,7 @@
   <xsl:output method="html" encoding="UTF-8" indent="no"/>
   <xsl:param name="generate.consistent.ids" select="1"/>
 
-  <!-- translate man page references to links to html pages -->
+  <!-- Translate references to links. -->
   <xsl:template match="citerefentry">
     <a>
       <xsl:attribute name="href">
@@ -32,4 +32,21 @@
       <xsl:call-template name="inline.charseq"/>
     </a>
   </xsl:template>
+
+  <!-- Add page header. -->
+  <xsl:template name="user.header.content">
+    <a>
+      <xsl:attribute name="href">
+        <xsl:text>index.html</xsl:text>
+      </xsl:attribute>
+      <xsl:text>Index </xsl:text>
+    </a>
+
+    <span style="float:right">
+      <xsl:text>bus1 </xsl:text>
+      <xsl:value-of select="$bus1.version"/>
+    </span>
+    <hr/>
+  </xsl:template>
+
 </xsl:stylesheet>
