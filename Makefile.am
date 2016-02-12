@@ -23,7 +23,7 @@ XSLTPROC_FLAGS = \
         --stringparam bus1.version $(VERSION)
 
 html/%.html: src/%.xml
-	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl $<
+	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 XML_FILES = $(wildcard src/*.xml)
 HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
