@@ -12,6 +12,8 @@ AM_SILENT_RULES([yes])
 
 AC_CANONICAL_HOST
 
+AC_PATH_PROG([XSLTPROC], [xsltproc])
+
 # ------------------------------------------------------------------------------
 # arguments
 
