@@ -50,7 +50,7 @@
     <title>See Also</title>
       <para>
         <citerefentry><refentrytitle>org.bus1.devices</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
-        <ulink url="https://github.com/bus1">Github Project</ulink>,
+        <ulink url="https://github.com/bus1">Git repositories</ulink>
       </para>
   </refsect1>
 </refentry>
