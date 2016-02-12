@@ -19,10 +19,10 @@
   along with bus1; If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<refentry id="bus1">
+<refentry id="org.bus1.devices">
   <refentryinfo>
-    <title>bus1</title>
-    <productname>bus1</productname>
+    <title>org.bus1.devices</title>
+    <productname>org.bus1.devices</productname>
 
     <author>
       <affiliation>
@@ -32,24 +32,23 @@
   </refentryinfo>
 
   <refmeta>
-    <refentrytitle>index</refentrytitle>
+    <refentrytitle>org.bus1.devices</refentrytitle>
     <manvolnum>7</manvolnum>
   </refmeta>
 
   <refnamediv>
-    <refname>bus1</refname>
+    <refname>org.bus1.devices</refname>
     <refpurpose>Overview</refpurpose>
   </refnamediv>
 
   <refsect1>
     <title>Description</title>
-    <para>Somewhere, something incredible is waiting to be known.</para>
+    <para>Kernel Device Manager</para>
   </refsect1>
 
   <refsect1>
     <title>See Also</title>
       <para>
-        <citerefentry><refentrytitle>org.bus1.devices</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
         <ulink url="https://github.com/bus1">Github Project</ulink>,
       </para>
   </refsect1>
