@@ -19,10 +19,10 @@
   along with bus1; If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<refentry id="bus1">
+<refentry id="org.bus1.coredump">
   <refentryinfo>
-    <title>bus1</title>
-    <productname>bus1</productname>
+    <title>org.bus1.coredump</title>
+    <productname>org.bus1.coredump</productname>
 
     <author>
       <affiliation>
@@ -32,26 +32,28 @@
   </refentryinfo>
 
   <refmeta>
-    <refentrytitle>index</refentrytitle>
-    <manvolnum>7</manvolnum>
+    <refentrytitle>org.bus1.coredump</refentrytitle>
+    <manvolnum>1</manvolnum>
   </refmeta>
 
   <refnamediv>
-    <refname>bus1</refname>
-    <refpurpose>Overview</refpurpose>
+    <refname>org.bus1.coredump</refname>
+    <refpurpose>Kernel Core Dump Handler</refpurpose>
   </refnamediv>
 
   <refsect1>
     <title>Description</title>
-    <para>Somewhere, something incredible is waiting to be known.</para>
+    <para><command>org.bus1.coredump</command> is executed by the kernel when
+    a process aborts abnormally. It extracts a stack trace and writes it to
+    the kernel log buffer, and alternatively stores the core dump in the
+    <filename>/var/coredump</filename> directory.</para>
   </refsect1>
 
   <refsect1>
     <title>See Also</title>
       <para>
-        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
         <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
-        <ulink url="https://github.com/bus1">Git repositories</ulink>
+        <ulink url="https://github.com/bus1/base">Git repository</ulink>
       </para>
   </refsect1>
 </refentry>

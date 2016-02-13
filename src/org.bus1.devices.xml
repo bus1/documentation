@@ -33,22 +33,23 @@
 
   <refmeta>
     <refentrytitle>org.bus1.devices</refentrytitle>
-    <manvolnum>7</manvolnum>
+    <manvolnum>1</manvolnum>
   </refmeta>
 
   <refnamediv>
     <refname>org.bus1.devices</refname>
-    <refpurpose>Overview</refpurpose>
+    <refpurpose>Kernel Device Manager</refpurpose>
   </refnamediv>
 
   <refsect1>
     <title>Description</title>
-    <para>Kernel Device Manager</para>
+    <para><command>org.bus1.devices</command> manages kernel devices, adjusts /dev permissions, and loads kernel modules.</para>
   </refsect1>
 
   <refsect1>
     <title>See Also</title>
       <para>
+        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
         <ulink url="https://github.com/bus1/base">Git repository</ulink>
       </para>
   </refsect1>
