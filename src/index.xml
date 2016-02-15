@@ -19,39 +19,60 @@
   along with bus1; If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<refentry id="bus1">
-  <refentryinfo>
-    <title>bus1</title>
-    <productname>bus1</productname>
+<index><title>Index</title>
+  <indexdiv><title>Overview</title>
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.introduction</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
 
-    <author>
-      <affiliation>
-        <orgname>org.bus1</orgname>
-      </affiliation>
-    </author>
-  </refentryinfo>
-
-  <refmeta>
-    <refentrytitle>index</refentrytitle>
-    <manvolnum>7</manvolnum>
-  </refmeta>
-
-  <refnamediv>
-    <refname>bus1</refname>
-    <refpurpose>Overview</refpurpose>
-  </refnamediv>
-
-  <refsect1>
-    <title>Description</title>
-    <para>Somewhere, something incredible is waiting to be known.</para>
-  </refsect1>
-
-  <refsect1>
-    <title>See Also</title>
-      <para>
-        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
-        <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+    <indexentry>
+      <primaryie>
         <ulink url="https://github.com/bus1">Git repositories</ulink>
-      </para>
-  </refsect1>
-</refentry>
+      </primaryie>
+    </indexentry>
+  </indexdiv>
+
+  <indexdiv><title>Services</title>
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.coredump</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.devices</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>org.bus1.rdinit</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+  </indexdiv>
+
+  <indexdiv><title>Kernel Module</title>
+    <indexentry>
+      <primaryie>foo 1</primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>bar 1</primaryie>
+    </indexentry>
+  </indexdiv>
+</index>
