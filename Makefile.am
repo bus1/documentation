@@ -1,11 +1,26 @@
+# ------------------------------------------------------------------------------
+# autotools
+
 SHELL=bash
+ACLOCAL_AMFLAGS = -I build/m4 ${ACLOCAL_FLAGS}
 AM_MAKEFLAGS = --no-print-directory
 AUTOMAKE_OPTIONS = color-tests parallel-tests
 
 GCC_COLORS ?= 'ooh, shiny!'
 export GCC_COLORS
 
-CLEANFILES =
+SUBDIRS = .
+
+# remove targets if the command fails
+.DELETE_ON_ERROR:
+
+# keep intermediate files
+.SECONDARY:
+
+# keep the test-suite.log and Makefile around at all times
+.PRECIOUS: $(TEST_SUITE_LOG) Makefile
+
+CLEANFILES = $(BUILT_SOURCES)
 
 # ------------------------------------------------------------------------------
 
@@ -31,10 +46,7 @@ HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
 CLEANFILES += \
 	$(HTML_FILES)
 
-html: $(HTML_FILES)
-	$(AM_V_at)$(MKDIR_P) html
-
-all: html
+all: $(HTML_FILES)
 .PHONY: all
 
 push: html
