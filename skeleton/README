@@ -1,0 +1,48 @@
+skeleton - Bus1 Skeleton Project
+
+DETAILS:
+        http://www.bus1.org
+
+BUG REPORTS:
+        https://github.com/bus1/skeleton/issues
+
+GIT:
+        git@github.com:bus1/skeleton.git
+        https://github.com/bus1/skeleton.git
+
+GITWEB:
+        https://github.com/bus1/skeleton
+
+LICENSE:
+        LGPLv2.1+ (LICENSE.LGPL2.1)
+        See COPYING for details.
+
+ABOUT:
+        The bus1-skeleton project contains the autotools skeleton used for all
+        of the other bus1 projects written in C. The skeleton provides:
+          - README and license related files
+          - editor configuration
+          - autotools skeleton
+          - example binary org.bus1.skeleton
+          - supports CC=clang and CC=gcc
+
+        Whenever you copy the skeleton into a new project, search for
+        'skeleton'/'SKELETON' and replace them by your project name.
+
+        The skeleton configures autotools to put all caches, generated files,
+        and other state tracking into the ./build/ subdirectory. In case of
+        VPATH builds, the only generated files left in the $srcdir are:
+          - ./aclocal.m4
+          - ./configure
+          - ./Makefile.in
+        Apparently, those cannot be moved into subdirectories.
+
+        You can build projects based on this skeleton via:
+          $ ./autogen.sh c              # 'c' runs ./configure when done
+          $ make                        # build project
+
+        If you want VPATH builds, use something along the lines of:
+          $ mkdir ./build/
+          $ cd ./build/
+          $ ../autogen.sh c
+          $ make
