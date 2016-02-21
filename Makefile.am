@@ -9,8 +9,6 @@ AUTOMAKE_OPTIONS = color-tests parallel-tests
 GCC_COLORS ?= 'ooh, shiny!'
 export GCC_COLORS
 
-SUBDIRS = .
-
 # remove targets if the command fails
 .DELETE_ON_ERROR:
 
