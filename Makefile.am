@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # autotools
 
-SHELL=bash
+SHELL = bash
 ACLOCAL_AMFLAGS = -I build/m4 ${ACLOCAL_FLAGS}
 AM_MAKEFLAGS = --no-print-directory
 AUTOMAKE_OPTIONS = color-tests parallel-tests

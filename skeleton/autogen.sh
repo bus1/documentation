@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 oldpwd=$(pwd)
@@ -9,7 +9,7 @@ mkdir -p ./build/m4/
 autoreconf --force --install --symlink
 cd $oldpwd
 
-if [ "x$1" = "xc" ]; then
+if [[ "$1" = "c" ]]; then
         $topdir/configure
         make clean
 else
