@@ -2,11 +2,11 @@
 # versions
 
 AC_PREREQ([2.64])
-AC_INIT([docs],
+AC_INIT([documentation],
         [1],
-        [http://www.github.com/bus1/docs],
-        [docs],
-        [http://www.github.com/bus1/docs])
+        [http://www.github.com/bus1/documentation],
+        [documentation],
+        [http://www.github.com/bus1/documentation])
 
 # ------------------------------------------------------------------------------
 # autotools
