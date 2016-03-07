@@ -23,7 +23,7 @@
   <indexdiv><title>Overview</title>
     <indexentry>
       <primaryie>
-        <citerefentry><refentrytitle>org.bus1.introduction</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+        <citerefentry><refentrytitle>org.bus1.bootstrap</refentrytitle><manvolnum>7</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
 
@@ -68,11 +68,7 @@
 
   <indexdiv><title>Kernel Module</title>
     <indexentry>
-      <primaryie>foo 1</primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>bar 1</primaryie>
+      <primaryie>foo</primaryie>
     </indexentry>
   </indexdiv>
 </index>

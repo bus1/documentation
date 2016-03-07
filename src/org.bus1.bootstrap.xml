@@ -1,20 +1,63 @@
+<?xml version='1.0'?> <!--*-nxml-*-->
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
 
-  The bootstrap process of the bus1 system.
+<!--
+  This file is part of bus1. See COPYING for details.
 
-  The system consists of an init process, a bus activation service, and
-  a central management process called the administrator.
+  bus1 is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 2.1 of the License, or
+  (at your option) any later version.
 
-  The administrator is the key component of the bus1 system. It reads the
-  system configuration, configures the services and keeps connected to
-  them.
+  bus1 is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
 
-  The activator is responsible for starting system binaries and to connect
-  them to the bus. Apart from the initial execution of the activator itself
-  and the administrator all services are started by the activator.
+  You should have received a copy of the GNU Lesser General Public License
+  along with bus1; If not, see <http://www.gnu.org/licenses/>.
+-->
 
+<refentry id="org.bus1.bootstrap">
+  <refentryinfo>
+    <title>org.bus1.bootstrap</title>
+    <productname>org.bus1.bootstrap</productname>
 
-  Init creates a bus peer for itself, the activator and the administrator.
+    <author>
+      <affiliation>
+        <orgname>org.bus1</orgname>
+      </affiliation>
+    </author>
+  </refentryinfo>
 
+  <refmeta>
+    <refentrytitle>org.bus1.bootstrap</refentrytitle>
+    <manvolnum>7</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>org.bus1.bootstrap</refname>
+    <refpurpose>Bootstrap</refpurpose>
+  </refnamediv>
+
+  <refsect1>
+    <title>The bootstrap process of the bus1 system.</title>
+
+    <para>The system consists of an init process, a bus activation service, and
+    a central management process called the administrator.</para>
+
+    <para>The administrator is the key component of the bus1 system. It reads
+    the system configuration, configures the services and keeps connected to
+    them.</para>
+
+    <para>The activator is responsible for starting system binaries and to
+    connect them to the bus. Apart from the initial execution of the activator
+    itself and the administrator all services are started by the activator.</para>
+
+    <para>Init creates a bus peer for itself, the activator and the administrator.</para>
+
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.init               │ ────────────────────────────┐
   │┌────────────────────────────────────┐│                             │
@@ -27,10 +70,11 @@
   ││ peer (org.bus1.administrator       ││ ◄── open("/dev/bus1") ──────┘
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>Init creates handles for itself and the activator.</para>
 
-  Init creates handles for itself and the activator.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.init               │
   │┌────────────────────────────────────┐│
@@ -49,11 +93,12 @@
   ││ peer (org.bus1.administrator)      ││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>Init connects its own and the handle of the activator with the
+    administrator.</para>
 
-  Init connects its own and the handle of the activator with the
-  administrator.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.init               │
   │┌────────────────────────────────────┐│
@@ -78,11 +123,12 @@
   ││└──────────────────────────────────┘││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>Init executes the administrator and activator binaries and passes along
+    their bus peers.</para>
 
-  Init executes the administrator and activator binaries and passes along
-  their bus peers.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.init               │ ────────────────────────────┐
   │┌────────────────────────────────────┐│                             │
@@ -115,11 +161,12 @@
   ││└──────────────────────────────────┘││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>The administrator pushes the configuration of the services it requires into
+    the activator.</para>
 
-  The administrator pushes the configuration of the services it requires into
-  the activator.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.administrator      │
   │┌────────────────────────────────────┐│
@@ -146,10 +193,11 @@
   ││└──────────────────────────────────┘││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>The activator creates a bus peer for every service.</para>
 
-  The activator creates a bus peer for every service.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.activator          │ ────────────────────────────┐
   │┌────────────────────────────────────┐│                             │
@@ -168,10 +216,11 @@
   ││ peer (org.bus1.audio)              ││ ◄── open("/dev/bus1") ──────┘
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>The activator creates a handle for every service.</para>
 
-  The activator creates a handle for every service.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.activator          │
   │┌────────────────────────────────────┐│
@@ -199,14 +248,15 @@
   ││└──────────────────────────────────┘││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
 
+    <para>The activator replies to the administrator with the created service
+    handles. The activator watches all service handles. On incoming messages,
+    the activator executes the service binary and passes along the bus peer
+    of the service. The started service can read the message from its handle
+    and reply to it.</para>
 
-  The activator replies to the administrator with the created service
-  handles. The activator watches all service handles. On incoming messages,
-  the activator executes the service binary and passes along the bus peer
-  of the service. The started service can read the message from its handle
-  and reply to it.
-
+<programlisting>
   ┌──────────────────────────────────────┐
   │ /usr/bin/org.bus1.activator          │
   │┌────────────────────────────────────┐│
@@ -256,3 +306,15 @@
   ││└──────────────────────────────────┘││
   │└────────────────────────────────────┘│
   └──────────────────────────────────────┘
+</programlisting>
+  </refsect1>
+
+  <refsect1>
+    <title>See Also</title>
+      <para>
+        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+        <ulink url="https://github.com/bus1/base">Git repository</ulink>
+      </para>
+  </refsect1>
+</refentry>
