@@ -45,15 +45,12 @@
     <title>The bootstrap process of the bus1 system.</title>
 
     <para>The system consists of an init process, a bus activation service, and
-    a central management process called the administrator.</para>
-
-    <para>The administrator is the key component of the bus1 system. It reads
-    the system configuration, configures the services and keeps connected to
-    them.</para>
-
-    <para>The activator is responsible for starting system binaries and to
-    connect them to the bus. Apart from the initial execution of the activator
-    itself and the administrator all services are started by the activator.</para>
+    a central management process called the administrator. The administrator is
+    the key component of the bus1 system. It reads the system configuration,
+    configures the services and stays connected to them. The activator is
+    responsible for starting system binaries and to connect them to the bus.
+    Apart from the initial execution of the activator itself and the administrator
+    all services are started by the activator.</para>
 
     <para>Init creates a bus peer for itself, the activator and the administrator.</para>
 
