@@ -68,7 +68,9 @@
 
   <indexdiv><title>Kernel Module</title>
     <indexentry>
-      <primaryie>foo</primaryie>
+      <primaryie>
+        <citerefentry prefix='kernel/'><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
     </indexentry>
   </indexdiv>
 </index>

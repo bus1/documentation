@@ -26,8 +26,9 @@
   <xsl:template match="citerefentry">
     <a>
       <xsl:attribute name="href">
-        <xsl:value-of select="refentrytitle"/><xsl:text>.html#</xsl:text>
-        <xsl:value-of select="refentrytitle/@target"/>
+        <xsl:value-of select="@prefix"/>
+        <xsl:value-of select="refentrytitle"/>
+        <xsl:text>.html</xsl:text>
       </xsl:attribute>
       <xsl:call-template name="inline.charseq"/>
     </a>
@@ -37,9 +38,9 @@
   <xsl:template name="user.header.content">
     <a>
       <xsl:attribute name="href">
-        <xsl:text>index.html</xsl:text>
+        <xsl:text>/</xsl:text>
       </xsl:attribute>
-      <img src="bus1.png" alt="bus1" style="width:48px;height:48px;"/>
+      <img src="/bus1.png" alt="bus1" style="width:48px;height:48px;"/>
     </a>
 
     <span style="float:right">

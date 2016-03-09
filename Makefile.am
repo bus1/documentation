@@ -35,22 +35,35 @@ XSLTPROC_FLAGS = \
         --stringparam man.copyright.section.enabled 0 \
         --stringparam bus1.version $(VERSION)
 
+# documentation repository
 html/%.html: src/%.xml
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 XML_FILES = $(wildcard src/*.xml)
 HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
 
-CLEANFILES += \
-	$(HTML_FILES)
+# bus1 kernel module repository
+html/kernel/%.html: ../bus1/Documentation/bus1/*.xml
+	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-all: $(HTML_FILES)
+XML_KERNEL_FILES = $(wildcard ../bus1/Documentation/bus1/*.xml)
+HTML_KERNEL_FILES = $(patsubst ../bus1/Documentation/bus1/%.xml,html/kernel/%.html,$(XML_KERNEL_FILES))
+
+CLEANFILES += \
+	$(HTML_FILES) \
+	$(HTML_KERNEL_FILES)
+
+foo:
+	echo $(HTML_FILES)
+	echo $(XML_KERNEL_FILES)
+
+all: $(HTML_FILES) $(HTML_KERNEL_FILES) src/html.xsl
 .PHONY: all
 
 push: html
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME src/bus1.png html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
-	  git add *.html *.png && \
+	  git add *.html *.png kernel/*.html && \
 	  git commit -a -m 'Update from "documentation" repository' && \
 	  git push )
 .PHONY: push
