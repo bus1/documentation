@@ -19,10 +19,10 @@
   along with bus1; If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<refentry id="org.bus1.activator">
+<refentry id="org.bus1.administrator">
   <refentryinfo>
-    <title>org.bus1.activator</title>
-    <productname>org.bus1.activator</productname>
+    <title>org.bus1.administrator</title>
+    <productname>org.bus1.administrator</productname>
 
     <author>
       <affiliation>
@@ -32,23 +32,26 @@
   </refentryinfo>
 
   <refmeta>
-    <refentrytitle>org.bus1.activator</refentrytitle>
+    <refentrytitle>org.bus1.administrator</refentrytitle>
     <manvolnum>1</manvolnum>
   </refmeta>
 
   <refnamediv>
-    <refname>org.bus1.activator</refname>
+    <refname>org.bus1.administrator</refname>
     <refpurpose>Bus Service Manager</refpurpose>
   </refnamediv>
 
   <refsect1>
     <title>Description</title>
-    <para>The <command>org.bus1.activator</command> connects services to the
-    bus. It receives the configuration for the bus services from the
-    <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
-    It creates a bus peer for every configured service and listens for incoming
-    requests on these peers. Incoming messages cause the activtor to execute
-    the service and hand over the bus connection with the queued messages.</para>
+    <para>The <command>org.bus1.administrator</command> is the central
+    component of the running system. It keeps a direct connections to all
+    services which are needed to control a running system. During bootup,
+    it installs the service configurations in the
+    <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+    which is responsible to execute the services on-demand. The
+    <command>org.bus1.administrator</command> activates and configures
+    the services and maintains the overall system state according to
+    its task.</para>
   </refsect1>
 
   <refsect1>

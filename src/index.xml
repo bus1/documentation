@@ -43,6 +43,12 @@
 
     <indexentry>
       <primaryie>
+        <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
         <citerefentry><refentrytitle>org.bus1.coredump</refentrytitle><manvolnum>1</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
