@@ -43,8 +43,8 @@
 
   <refsect1>
     <title>Description</title>
-    <para>The <command>org.bus1.activator</command> connects services to the
-    bus. It receives the configuration for the bus services from the
+    <para>The <command>org.bus1.activator</command> connects the services
+    to the bus. It receives the configuration for the bus services from the
     <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
     It creates a bus peer for every configured service and listens for incoming
     requests on these peers. Incoming messages cause the activtor to execute

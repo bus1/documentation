@@ -44,9 +44,9 @@
   <refsect1>
     <title>Description</title>
     <para>The <command>org.bus1.administrator</command> is the central
-    component of the running system. It keeps a direct connections to all
-    services which are needed to control a running system. During bootup,
-    it installs the service configurations in the
+    component of the system. It holds a direct connections to all
+    services which are needed to keep the control of the running system.
+    During bootup, it installs the service configurations in the
     <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
     which is responsible to execute the services on-demand. The
     <command>org.bus1.administrator</command> activates and configures
