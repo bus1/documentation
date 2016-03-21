@@ -47,7 +47,7 @@
     to the bus. It receives the configuration for the bus services from the
     <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
     It creates a bus peer for every configured service and listens for incoming
-    requests on these peers. Incoming messages cause the activtor to execute
+    requests on these peers. Incoming messages cause the activator to execute
     the service and hand over the bus connection with the queued messages.</para>
   </refsect1>
 
