@@ -43,7 +43,7 @@ XML_FILES = $(wildcard src/*.xml)
 HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
 
 # bus1 kernel module repository
-html/kernel/%.html: ../bus1/Documentation/bus1/*.xml
+html/kernel/%.html: ../bus1/Documentation/bus1/%.xml
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 XML_KERNEL_FILES = $(wildcard ../bus1/Documentation/bus1/*.xml)
@@ -52,10 +52,6 @@ HTML_KERNEL_FILES = $(patsubst ../bus1/Documentation/bus1/%.xml,html/kernel/%.ht
 CLEANFILES += \
 	$(HTML_FILES) \
 	$(HTML_KERNEL_FILES)
-
-foo:
-	echo $(HTML_FILES)
-	echo $(XML_KERNEL_FILES)
 
 all: $(HTML_FILES) $(HTML_KERNEL_FILES) src/html.xsl
 .PHONY: all
