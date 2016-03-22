@@ -78,5 +78,29 @@
         <citerefentry prefix='kernel/'><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry prefix='kernel/'><refentrytitle>bus1.message</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry prefix='kernel/'><refentrytitle>bus1.node</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry prefix='kernel/'><refentrytitle>bus1.peer</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry prefix='kernel/'><refentrytitle>bus1.pool</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
   </indexdiv>
 </index>
