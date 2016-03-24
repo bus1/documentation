@@ -8,6 +8,10 @@ body {
   max-width: 40em;
 }
 
+header {
+  margin-bottom: 1.5em;
+}
+
 h1, h2, h3 {
   color: #000;
   line-height: 2.5;
@@ -52,8 +56,9 @@ a:hover {
   text-decoration: underline;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid rgb(200, 200, 200);
+.version {
+  float: right;
+  font-size: 0.8em;
+  font-family: sans-serif;
+  color: rgb(180, 180, 180);
 }
-

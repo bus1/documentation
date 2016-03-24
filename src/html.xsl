@@ -37,18 +37,19 @@
 
   <!-- Add page header. -->
   <xsl:template name="user.header.content">
-    <a>
-      <xsl:attribute name="href">
-        <xsl:text>/</xsl:text>
-      </xsl:attribute>
-      <img src="/bus1.png" alt="bus1" style="width:48px;height:48px;"/>
-    </a>
+    <header>
+      <a>
+        <xsl:attribute name="href">
+          <xsl:text>/</xsl:text>
+        </xsl:attribute>
+        <img src="/bus1.png" alt="bus1" style="width:48px;height:48px;"/>
+      </a>
 
-    <span style="float:right">
-      <xsl:text>Version </xsl:text>
-      <xsl:value-of select="$bus1.version"/>
-    </span>
-    <hr/>
+      <span class="version">
+        <xsl:text>Version </xsl:text>
+        <xsl:value-of select="$bus1.version"/>
+      </span>
+    </header>
   </xsl:template>
 
 </xsl:stylesheet>
