@@ -36,14 +36,14 @@ XSLTPROC_FLAGS = \
         --stringparam bus1.version $(VERSION)
 
 # documentation repository
-html/%.html: src/%.xml
+html/%.html: src/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 XML_FILES = $(wildcard src/*.xml)
 HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
 
 # bus1 kernel module repository
-html/kernel/%.html: ../bus1/Documentation/bus1/%.xml
+html/kernel/%.html: ../bus1/Documentation/bus1/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 XML_KERNEL_FILES = $(wildcard ../bus1/Documentation/bus1/*.xml)
