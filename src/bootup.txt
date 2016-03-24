@@ -10,49 +10,51 @@ $ sudo make qemu
 	-append "quiet disk=$(blkid -p -s PTUUID -o value efi-disk.img) loader=/EFI/org.bus1/$(cat system/usr/lib/org.bus1/release).efi console=ttyS0 console=tty0" \
 	-drive format=raw,file=efi-disk.img
 
-Fedora 24 (Rawhide)
-Kernel 4.5.0-0.rc1.git2.1.fc24.x86_64 on an x86_64 (ttyS0)
+Fedora 25 (Rawhide)
+Kernel 4.6.0-0.rc0.git12.1.fc25.x86_64 on an x86_64 (ttyS0)
 
 login: root
 
 -bash-4.3# dmesg | grep bus1
-[    0.000000] Kernel command line: quiet disk=b6314dc4-4191-4828-beae-01de2be292da loader=/EFI/org.bus1/org.example-1454498618.efi console=ttyS0 console=tty0
-[    0.648060] bus1: initialized
-[    0.651364] org.bus1.rdinit[1]: Starting org.bus1.activator.
-[    0.652991] org.bus1.activator[88]: Activating service org.bus1.devices.
-[    0.653979] org.bus1.devices[88]: Coldplug, adjust /dev permissions and load kernel modules for current devices.
-[    0.753869] org.bus1.rdinit[1]: Mounting boot device /dev/sda1 at /boot.
-[    0.763990] org.bus1.rdinit[1]: Setting up cryptographic integrity validation of system image org.example-1454498618.img.
-[    0.775264] org.bus1.rdinit[1]: Mounting /dev/dm-0 (squashfs) at /usr.
-[    0.854821] org.bus1.rdinit[1]: Setting up decryption of data volume /dev/sda2.
-[    0.874521] org.bus1.rdinit[1]: Mounting org.bus1.data device /dev/dm-1 (xfs) at /var.
-[    0.969307] org.bus1.activator[87]: Terminating service org.bus1.devices.
-[    0.979880] org.bus1.rdinit[1]: Executing org.bus1.init.
-[    1.031270] org.bus1.init[1]: Release org.example-1454498618.
-[    1.031364] org.bus1.init[1]: Starting org.bus1.activator.
-[    1.031480] org.bus1.init[1]: Starting getty on tty1.
-[    1.031594] org.bus1.init[1]: Starting getty on ttyS0.
-[    1.055093] org.bus1.activator[177]: Activating service org.bus1.devices.
-[    1.084386] org.bus1.devices[177]: Coldplug, adjust /dev permissions and load kernel modules for current devices.
+[    0.000000] Command line: quiet disk=dafc8a78-5c69-4523-80cb-48600bd37cc3 loader=/EFI/org.bus1/org.example-1458529446.efi console=ttyS0 console=tty0
+[    0.700681] bus1: initialized
+[    0.703969] org.bus1.rdinit[1]: Starting org.bus1.activator.
+[    0.705730] org.bus1.activator[94]: Activating service org.bus1.devices.
+[    0.706876] org.bus1.devices[94]: Coldplug, adjust /dev permissions and load kernel modules for current devices.
+[    0.806583] org.bus1.rdinit[1]: Mounting boot device /dev/sda1 at /boot.
+[    0.818367] org.bus1.rdinit[1]: Setting up cryptographic integrity validation of system image org.example-1458529446.img.
+[    0.829313] org.bus1.rdinit[1]: Mounting /dev/dm-0 (squashfs) at /usr.
+[    0.901770] org.bus1.rdinit[1]: Setting up decryption of data volume /dev/sda2.
+[    0.919727] org.bus1.rdinit[1]: Mounting org.bus1.disk.data device /dev/dm-1 (xfs) at /var.
+[    1.012794] org.bus1.rdinit[1]: Mounting org.bus1.disk.data device /dev/dm-1 (xfs) at /var.
+[    1.013022] org.bus1.activator[93]: Terminating service org.bus1.devices.
+[    1.023692] org.bus1.rdinit[1]: Executing org.bus1.init.
+[    1.076806] org.bus1.init[1]: Release org.example-1458529446.
+[    1.076928] org.bus1.init[1]: Starting org.bus1.administrator.
+[    1.077057] org.bus1.init[1]: Starting org.bus1.activator.
+[    1.081872] org.bus1.activator[178]: Activating service org.bus1.devices.
+[    1.091723] org.bus1.administrator[176]: Starting getty on tty1.
+[    1.091862] org.bus1.administrator[176]: Starting getty on ttyS0.
+[    1.138581] org.bus1.devices[178]: Coldplug, adjust /dev permissions and load kernel modules for current devices.
 
 -bash-4.3# ps afx
-   1 ?        Ss     0:00 /usr/bin/org.bus1.init
-  173 ?        Ss     0:00 /usr/bin/org.bus1.activator
-  176 ?        Ss     0:00  \_ /usr/bin/org.bus1.devices
-  174 tty1     Ss+    0:00 /usr/bin/agetty --nohostname --keep-baud 115200 38400
-  175 ?        Ss     0:00 login -- root
-  233 ttyS0    Ss     0:00  \_ -bash
-  250 ttyS0    R+     0:00      \_ ps afx
+    1 ?        Ss     0:00 /usr/bin/org.bus1.init
+  176 ?        Ss     0:00 /usr/bin/org.bus1.administrator
+  179 ?        Ss     0:00  \_ login -- root
+  258 tty1     Ss+    0:00  |   \_ -bash
+  180 ?        Ss     0:00  \_ login -- root
+  237 ttyS0    Ss     0:00      \_ -bash
+  275 ttyS0    R+     0:00          \_ ps afx
+  177 ?        Ss     0:00 /usr/bin/org.bus1.activator
+  178 ?        Ss     0:00  \_ /usr/bin/org.bus1.devices
 
 -bash-4.3# findmnt 
 TARGET       SOURCE    FSTYPE  OPTIONS
 /            tmpfs     tmpfs   rw,nosuid,nodev,noexec,size=5120k,mode=755
-|-/dev       devtmpfs  devtmpf rw,nosuid,noexec,size=492256k,nr_inodes=123064,mo
-| `-/dev/pts devpts    devpts  rw,nosuid,noexec,relatime,mode=620,ptmxmode=000
+|-/dev       devtmpfs  devtmpf rw,nosuid,noexec,size=491896k,nr_inodes=122974,mo
+| `-/dev/pts devpts    devpts  rw,nosuid,noexec,relatime,mode=620,ptmxmode=666
 |-/proc      proc      proc    rw,nosuid,nodev,noexec,relatime,hidepid=2
 |-/sys       sysfs     sysfs   rw,nosuid,nodev,noexec,relatime
-| `-/sys/fs/bus1
-|            bus1fs    bus1fs  rw,nosuid,nodev,noexec,relatime
 |-/boot      /dev/sda1 vfat    rw,nosuid,nodev,noexec,relatime,fmask=0027,dmask=
 |-/usr       /dev/dm-0 squashf ro,nodev,relatime
 |-/etc       /dev/dm-0[/etc]
@@ -63,56 +65,66 @@ TARGET       SOURCE    FSTYPE  OPTIONS
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        481M     0  481M   0% /dev
 tmpfs           5.0M     0  5.0M   0% /
-/dev/sda1       510M  198M  313M  39% /boot
-/dev/dm-0       183M  183M     0 100% /usr
+/dev/sda1       510M  193M  317M  38% /boot
+/dev/dm-0       178M  178M     0 100% /usr
 /dev/dm-1       508M   26M  482M   6% /var
 
 -bash-4.3# tree /boot/
-/boot/
+/boot
 `-- EFI
     |-- Boot
     |   `-- bootx64.efi
     `-- org.bus1
-        |-- org.example-1454498618.efi
-        `-- org.example-1454498618.img
+        |-- org.example-1458529446.efi
+        `-- org.example-1458529446.img
 
--bash-4.3# org.bus1.diskctl info /boot/EFI/org.bus1/org.example-1454498618.img
+-bash-4.3# org.bus1.diskctl info /boot/EFI/org.bus1/org.example-1458529446.img 
 ==================================================================================
-Info for:         /boot/EFI/org.bus1/org.example-1454498618.img
-Image type:       org.bus1.sign
-Image Name:       org.bus1.system
-Image UUID:       2c1cbd1a-c3da-4609-b276-1f4d04fec907
+Info for:         /boot/EFI/org.bus1/org.example-1458529446.img
+Image type:       org.bus1.disk.sign
+Image Name:       org.bus1.disk.system
+Image UUID:       d05f7f9a-109a-4ca6-988e-7eba6f60e082
 Data type:        squashfs
 Data offset:      8192 bytes
-Data size:        191414272 bytes
-Hash tree offset: 191422464 bytes
-Hash tree size:   1515520 bytes
+Data size:        186019840 bytes
+Hash tree offset: 186028032 bytes
+Hash tree size:   1470464 bytes
 Hash algorithm:   sha256
 Hash digest size: 256 bits
-Data block size:  4096 bytes (46732 blocks)
-Hash Block size:  4096 bytes (370 blocks)
-Salt:             105a8cbdb27549ccbd863bc327a63b8aed91f6590ec34b2a0004255a8d56fb31
-Root hash:        82c5059775619b284f5bcaeb6ef06d418b1ca9b69c4080ce32e0cb6bad9875cb
+Data block size:  4096 bytes (45415 blocks)
+Hash Block size:  4096 bytes (359 blocks)
+Salt:             5da82ad801a2c755c7796664e97f41e27629643f70ac7afb138c28ebb72e0252
+Root hash:        fc3856f7a8d81d02e6b3866e369ae7f3704394990ff04a610dee78a3ca3e0929
 ==================================================================================
 
 -bash-4.3# org.bus1.diskctl info /dev/sda2
 ========================================================================================================
 Info for:               /dev/sda2
-Image type:             org.bus1.encrypt
-Image name:             org.bus1.data
-Image UUID:             94acd5da-5532-4441-bf4c-9ab516184806
+Image type:             org.bus1.disk.encrypt
+Image name:             org.bus1.disk.data
+Image UUID:             00f8cb18-61c7-499e-9e62-decdfc6656ca
 Data type:              xfs
 Data offset:            36864 bytes
 Data size:              535785472 bytes
 Data encryption:        aes-xts-plain64
 Master key encryption:  aes-wrap
-Master key (encrypted): f0093b146ade2454232217a0a2c8396a0f8790117a3880d70569bb7ae05d45e41da4f910aee0c898
+Master key (encrypted): 927c33e1bab62154d605e23f4801b94a6f270b9b40d5bb3b5573cba9030c795140e9ae2cf8162991
 Master key size:        320 bits
-Key slots:              8
-Key[0] type UUID:       54e18c3c-3f65-4909-a536-bf7d080ff282
-Key[0] encryption:      aes-wrap
-Key[0] key (encrypted): 509c50e85a3f4233e22ab358b598ad6696f5198e7dc44a991732e716524a100716d3a5b6c363708a
-Key[0] key size:        320 bits
+Number of key slots:    2
+Slot 0:
+  type UUID:            54e18c3c-3f65-4909-a536-bf7d080ff282
+  UUID:                 6a4c5332-43a7-339c-c961-78d4857eed8a
+  type:                 clear
+    encryption:         aes-wrap
+    key (encrypted):    e24d5309cd2c2f22b4b3840053d17d6b890f009135c5096a15eb14712e7ac7499a6b571d6a6229dd
+    key size:           320 bits
+Slot 1:
+  type UUID:            30a49386-8bbc-4e97-8412-03f50ad10621
+  UUID:                 d825e33b-f332-ff01-3879-455c0152ca22
+  type:                 recovery
+    encryption:         aes-wrap
+    key (encrypted):    fa3be30926195ccf9ecf95f33c29d4704f1b68697b11f672d95767305e7c53e35982e344fa247c29
+    key size:           320 bits
 ========================================================================================================
 
 -bash-4.3# 
