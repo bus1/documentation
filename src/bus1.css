@@ -1,0 +1,59 @@
+
+body {
+  margin: 0 auto;
+  padding: 1.5em;
+  color: rgb(50, 50, 50);
+  font-size: 18px;
+  font-family: serif;
+  max-width: 40em;
+}
+
+h1, h2, h3 {
+  color: #000;
+  line-height: 2.5;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+p, dl {
+  line-height: 1.5;
+  margin: 0 0 0.5em 0;
+}
+
+pre {
+  margin: 0 0 0.5em 0;
+}
+
+pre, code {
+  font-size: 0.8em;
+}
+
+code {
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(50, 75, 175);
+}
+
+a:visited {
+  color: rgb(125, 75, 175);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgb(200, 200, 200);
+}
+

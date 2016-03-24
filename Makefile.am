@@ -26,6 +26,10 @@ AM_V_XSLT = $(AM_V_XSLT_$(V))
 AM_V_XSLT_ = $(AM_V_XSLT_$(AM_DEFAULT_VERBOSITY))
 AM_V_XSLT_0 = @echo "  XSLT    " $@;
 
+AM_V_CP = $(AM_V_CP_$(V))
+AM_V_CP_ = $(AM_V_CP_$(AM_DEFAULT_VERBOSITY))
+AM_V_CP_0 = @echo "  CP      " $@;
+
 XSLTPROC_FLAGS = \
         --nonet \
         --xinclude \
@@ -39,8 +43,12 @@ XSLTPROC_FLAGS = \
 html/%.html: src/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
+html/%.css: src/%.css
+	$(AM_V_CP) cp $< $@
+
 XML_FILES = $(wildcard src/*.xml)
 HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
+CSS_FILES = html/bus1.css
 
 # bus1 kernel module repository
 html/kernel/%.html: ../bus1/Documentation/bus1/%.xml src/html.xsl
@@ -51,9 +59,10 @@ HTML_KERNEL_FILES = $(patsubst ../bus1/Documentation/bus1/%.xml,html/kernel/%.ht
 
 CLEANFILES += \
 	$(HTML_FILES) \
-	$(HTML_KERNEL_FILES)
+	$(HTML_KERNEL_FILES) \
+	$(CSS_FILES)
 
-all: $(HTML_FILES) $(HTML_KERNEL_FILES) src/html.xsl
+all: $(HTML_FILES) $(HTML_KERNEL_FILES) $(CSS_FILES) src/html.xsl
 .PHONY: all
 
 push: html
