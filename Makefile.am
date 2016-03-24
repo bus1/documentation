@@ -66,9 +66,9 @@ all: $(HTML_FILES) $(HTML_KERNEL_FILES) $(CSS_FILES) src/html.xsl
 .PHONY: all
 
 push: html
-	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME src/bus1.png html/ ../bus1.github.io/
+	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME src/bus1.png src/bus1.css html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
-	  git add *.html *.png kernel/*.html && \
+	  git add *.html *.css *.png kernel/*.html && \
 	  git commit -a -m 'Update from "documentation" repository' && \
 	  git push )
 .PHONY: push
