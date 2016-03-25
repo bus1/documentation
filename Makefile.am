@@ -45,12 +45,12 @@ html/%.css: src/%.css
 CSS_FILES = \
 	html/bus1.css
 
-html/%.png: src/%.png
+html/%.svg: src/%.svg
 	$(AM_V_at)$(MKDIR_P) html
 	$(AM_V_CP) cp $< $@
 
 IMAGE_FILES = \
-	html/bus1.png
+	html/bus1.svg
 
 html/%.html: src/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
@@ -79,7 +79,7 @@ all: $(CSS_FILES) $(IMAGE_FILES) $(HTML_FILES) $(HTML_KERNEL_FILES) src/html.xsl
 push: html
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
-	  git add *.html *.css *.png && \
+	  git add *.html *.css *.svg && \
 	  git commit -a -m 'Update from "documentation" repository' && \
 	  git push )
 .PHONY: push

@@ -56,7 +56,7 @@
         <xsl:attribute name="href">
           <xsl:text>/</xsl:text>
         </xsl:attribute>
-        <img src="bus1.png" alt="bus1" style="width:48px;height:48px;"/>
+        <img src="bus1.svg" alt="bus1" style="width:48px;height:48px;"/>
       </a>
 
       <span class="version">
