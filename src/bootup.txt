@@ -26,7 +26,6 @@ login: root
 [    0.829313] org.bus1.rdinit[1]: Mounting /dev/dm-0 (squashfs) at /usr.
 [    0.901770] org.bus1.rdinit[1]: Setting up decryption of data volume /dev/sda2.
 [    0.919727] org.bus1.rdinit[1]: Mounting org.bus1.disk.data device /dev/dm-1 (xfs) at /var.
-[    1.012794] org.bus1.rdinit[1]: Mounting org.bus1.disk.data device /dev/dm-1 (xfs) at /var.
 [    1.013022] org.bus1.activator[93]: Terminating service org.bus1.devices.
 [    1.023692] org.bus1.rdinit[1]: Executing org.bus1.init.
 [    1.076806] org.bus1.init[1]: Release org.example-1458529446.
