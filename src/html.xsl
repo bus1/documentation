@@ -21,7 +21,7 @@
   <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl"/>
   <xsl:output method="html" encoding="UTF-8" indent="no"/>
   <xsl:param name="generate.consistent.ids" select="1"/>
-  <xsl:param name="html.stylesheet">/bus1.css</xsl:param>
+  <xsl:param name="html.stylesheet">bus1.css</xsl:param>
 
   <!-- Translate references to links. -->
   <xsl:template match="citerefentry">
@@ -35,8 +35,10 @@
     </a>
   </xsl:template>
 
-  <xsl:template match="citerefentry[refentrytitle='mmap'] |
-                       citerefentry[refentrytitle='munmap']">
+  <xsl:template match="citerefentry[refentrytitle='ioctl'] |
+                       citerefentry[refentrytitle='mmap'] |
+                       citerefentry[refentrytitle='munmap'] |
+                       citerefentry[refentrytitle='open']">
     <a>
       <xsl:attribute name="href">
         <xsl:text>http://linux.die.net/man/</xsl:text>
@@ -55,7 +57,7 @@
         <xsl:attribute name="href">
           <xsl:text>/</xsl:text>
         </xsl:attribute>
-        <img src="/bus1.png" alt="bus1" style="width:48px;height:48px;"/>
+        <img src="bus1.png" alt="bus1" style="width:48px;height:48px;"/>
       </a>
 
       <span class="version">
