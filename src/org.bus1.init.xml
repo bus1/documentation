@@ -47,7 +47,8 @@
     <citerefentry><refentrytitle>org.bus1.rdinit</refentrytitle><manvolnum>1</manvolnum></citerefentry>
     and runs as PID1. It is responisble for starting the
     <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-    service, for optionally starting a debug console login, or a serial debug console.</para>
+    and <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+    services.</para>
   </refsect1>
 
   <refsect1>
@@ -55,6 +56,7 @@
       <para>
         <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
         <citerefentry><refentrytitle>org.bus1.rdinit</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>org.bus1.bootstrap</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
         <ulink url="https://github.com/bus1/base">Git repository</ulink>
       </para>
   </refsect1>
