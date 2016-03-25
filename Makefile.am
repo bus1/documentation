@@ -39,42 +39,25 @@ XSLTPROC_FLAGS = \
         --stringparam man.copyright.section.enabled 0 \
         --stringparam bus1.version $(VERSION)
 
-html/%.css: src/%.css
-	$(AM_V_at)$(MKDIR_P) html
-	$(AM_V_CP) cp $< $@
-
-CSS_FILES = \
-	html/bus1.css
-
-html/%.svg: src/%.svg
-	$(AM_V_at)$(MKDIR_P) html
-	$(AM_V_CP) cp $< $@
-
-IMAGE_FILES = \
-	html/bus1.svg
-
+# ------------------------------------------------------------------------------
+# documentation
 html/%.html: src/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-XML_FILES = $(wildcard src/*.xml)
-HTML_FILES = $(patsubst src/%.xml,html/%.html,$(XML_FILES))
+HTML_FILES = $(patsubst src/%.xml,html/%.html,$(wildcard src/*.xml))
 
 # ------------------------------------------------------------------------------
-# bus1 kernel module
+# bus1 kernel module documentation
 html/%.html: ../bus1/Documentation/bus1/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-XML_KERNEL_FILES = $(wildcard ../bus1/Documentation/bus1/*.xml)
-HTML_KERNEL_FILES = $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(XML_KERNEL_FILES))
+HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard ../bus1/Documentation/bus1/*.xml))
 
 # ------------------------------------------------------------------------------
 CLEANFILES += \
-	$(CSS_FILES) \
-	$(IMAGE_FILES) \
-	$(HTML_FILES) \
-	$(HTML_KERNEL_FILES)
+	$(HTML_FILES)
 
-all: $(CSS_FILES) $(IMAGE_FILES) $(HTML_FILES) $(HTML_KERNEL_FILES) src/html.xsl
+all: $(HTML_FILES) src/html.xsl
 .PHONY: all
 
 push: html
