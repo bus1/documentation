@@ -60,10 +60,10 @@ CLEANFILES += \
 all: $(HTML_FILES) src/html.xsl
 .PHONY: all
 
-push: html
+web: html
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
 	  git add *.html *.css *.svg && \
 	  git commit -a -m 'Update from "documentation" repository' && \
 	  git push )
-.PHONY: push
+.PHONY: web
