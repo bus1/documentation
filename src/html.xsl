@@ -23,33 +23,11 @@
   <xsl:param name="generate.consistent.ids" select="1"/>
   <xsl:param name="html.stylesheet">bus1.css</xsl:param>
 
-  <!-- Translate references to links. -->
-  <xsl:template match="citerefentry">
-    <a>
-      <xsl:attribute name="href">
-        <xsl:value-of select="refentrytitle"/>
-        <xsl:text>.html</xsl:text>
-      </xsl:attribute>
-      <xsl:call-template name="inline.charseq"/>
-    </a>
-  </xsl:template>
-
-  <xsl:template match="citerefentry[refentrytitle='ioctl'] |
-                       citerefentry[refentrytitle='mmap'] |
-                       citerefentry[refentrytitle='munmap'] |
-                       citerefentry[refentrytitle='open']">
-    <a>
-      <xsl:attribute name="href">
-        <xsl:text>http://linux.die.net/man/</xsl:text>
-        <xsl:value-of select="manvolnum"/>
-        <xsl:text>/</xsl:text>
-        <xsl:value-of select="refentrytitle"/>
-      </xsl:attribute>
-      <xsl:call-template name="inline.charseq"/>
-    </a>
-  </xsl:template>
-
   <!-- Add page header. -->
+  <xsl:template name="user.head.content">
+    <link rel="icon" href="bus1.png" type="image/png"/>
+  </xsl:template>
+
   <xsl:template name="user.header.content">
     <header>
       <a>
@@ -66,4 +44,30 @@
     </header>
   </xsl:template>
 
+  <!-- Translate references to links. -->
+  <xsl:template match="citerefentry">
+    <a>
+      <xsl:attribute name="href">
+        <xsl:value-of select="refentrytitle"/>
+        <xsl:text>.html</xsl:text>
+      </xsl:attribute>
+      <xsl:call-template name="inline.charseq"/>
+    </a>
+  </xsl:template>
+
+  <!-- External links. -->
+  <xsl:template match="citerefentry[refentrytitle='ioctl'] |
+                       citerefentry[refentrytitle='mmap'] |
+                       citerefentry[refentrytitle='munmap'] |
+                       citerefentry[refentrytitle='open']">
+    <a>
+      <xsl:attribute name="href">
+        <xsl:text>http://linux.die.net/man/</xsl:text>
+        <xsl:value-of select="manvolnum"/>
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="refentrytitle"/>
+      </xsl:attribute>
+      <xsl:call-template name="inline.charseq"/>
+    </a>
+  </xsl:template>
 </xsl:stylesheet>

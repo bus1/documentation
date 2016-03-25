@@ -54,16 +54,15 @@ html/%.html: ../bus1/Documentation/bus1/%.xml src/html.xsl
 HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard ../bus1/Documentation/bus1/*.xml))
 
 # ------------------------------------------------------------------------------
-CLEANFILES += \
-	$(HTML_FILES)
+CLEANFILES += $(HTML_FILES)
 
-all: $(HTML_FILES) src/html.xsl
+all: $(HTML_FILES)
 .PHONY: all
 
 web: html
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
-	  git add *.html *.css *.svg && \
+	  git add *.html *.css *.png *.svg && \
 	  git commit -a -m 'Update from "documentation" repository' && \
 	  git push )
 .PHONY: web
