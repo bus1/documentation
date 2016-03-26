@@ -55,7 +55,7 @@
     <para>Init opens the bus1 file descriptor and creates the initial peer
     for itself.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │ ─── open("/dev/bus1") ──────┐
 ├────────────────────────────────────┤                             │
@@ -64,12 +64,12 @@
 ││ handle (self)                    ││ ◄── ioctl(PEER_CLONE) ──────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>Init creates the peer for the administrator. The administrator's
     root handle gets created and init gets a handle to it.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │
 ├────────────────────────────────────┤
@@ -86,11 +86,11 @@
 ││ handle (self)                    ││
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>Init sends its own root handle to the administrator.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │
 ├────────────────────────────────────┤
@@ -110,13 +110,13 @@
 ││ handle (org.bus1.init)           ││ ◄───────────────────────────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>Init creates the peer for the activator. The activator's
     root handle gets created and the administrator gets a handle to
     it.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │
 ├────────────────────────────────────┤
@@ -144,12 +144,12 @@
 ││ handle (self)                    ││ ◄───────────────────────────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>Init forks and executes the administrator and activator
     binaries and passes along the bus peers created for them.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │ ──┬ exec() ┬────────────────┐
 ├────────────────────────────────────┤   │        │                │
@@ -186,12 +186,12 @@
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
 
-</programlisting>
+</screen>
 
     <para>The administrator pushes the configuration of the services it requires into
     the activator.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.administrator    │
 ├────────────────────────────────────┤
@@ -219,12 +219,12 @@
 ││ handle (self)                    ││ ◄───────────────────────────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>The activator creates a bus peer for every service. The services
     root handles get created and the activator gets handles to them.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.activator        │ ──┬ ioctl(PEER_CLONE) ┬─────┐
 ├────────────────────────────────────┤   │                   │     │
@@ -257,7 +257,7 @@
 ││ handle (self)                    ││
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
 
     <para>The activator replies to the administrator with the created service
     handles. The activator watches all service handles. On incoming messages,
@@ -265,7 +265,7 @@
     of the service. The started service can read the message from its handle
     and reply to it.</para>
 
-<programlisting>
+<screen>
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.activator        │
 ├────────────────────────────────────┤
@@ -313,7 +313,7 @@
 ││ handle (org.bus1.timesync)       ││ ◄───────────────────────────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
-</programlisting>
+</screen>
   </refsect1>
 
   <refsect1>
