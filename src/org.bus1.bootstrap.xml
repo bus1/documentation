@@ -61,7 +61,7 @@
 ├────────────────────────────────────┤                             │
 │ peer (org.bus1.init)               │                             │
 │┌──────────────────────────────────┐│                             │
-││ handle (self)                    ││ ◄── ioctl(PEER_CREATE) ─────┘
+││ handle (self)                    ││ ◄── ioctl(PEER_CLONE) ──────┘
 │└──────────────────────────────────┘│
 └────────────────────────────────────┘
 </programlisting>
@@ -73,7 +73,7 @@
 ┌────────────────────────────────────┐
 │ /usr/bin/org.bus1.init             │
 ├────────────────────────────────────┤
-│ peer (org.bus1.init)               │ ─── ioctl(PEER_CREATE) ─────┐
+│ peer (org.bus1.init)               │ ─── ioctl(PEER_CLONE) ──────┐
 │┌──────────────────────────────────┐│                             │
 ││ handle (self)                    ││                             │
 │└──────────────────────────────────┘│                             │
@@ -128,7 +128,7 @@
 ││ handle (org.bus1.administrator)  ││
 │└──────────────────────────────────┘│
 ├────────────────────────────────────┤
-│ peer (org.bus1.administrator)      │ ─── ioctl(PEER_CREATE) ─────┐
+│ peer (org.bus1.administrator)      │ ─── ioctl(PEER_CLONE) ──────┐
 │┌──────────────────────────────────┐│                             │
 ││ handle (self)                    ││                             │
 │└──────────────────────────────────┘│                             │
@@ -226,11 +226,11 @@
 
 <programlisting>
 ┌────────────────────────────────────┐
-│ /usr/bin/org.bus1.activator        │ ──┬ ioctl(PEER_CREATE) ┬────┐
-├────────────────────────────────────┤   │                    │    │
-│ peer (org.bus1.activator)          │   ├ ioctl(PEER_CREATE) ┤    │
-│┌──────────────────────────────────┐│   │                    │    │
-││ handle (self)                    ││   └ ioctl(PEER_CREATE) ┘    │
+│ /usr/bin/org.bus1.activator        │ ──┬ ioctl(PEER_CLONE) ┬─────┐
+├────────────────────────────────────┤   │                   │     │
+│ peer (org.bus1.activator)          │   ├ ioctl(PEER_CLONE) ┤     │
+│┌──────────────────────────────────┐│   │                   │     │
+││ handle (self)                    ││   └ ioctl(PEER_CLONE) ┘     │
 │└──────────────────────────────────┘│                             │
 │┌──────────────────────────────────┐│                             │
 ││ handle (org.bus1.audio)          ││ ◄───────────────────────────┤
