@@ -44,7 +44,7 @@
   <refsect1>
     <title>Description</title>
     <para><command>org.bus1.rdinit</command> is part of the initramfs
-    image. It is executed as <command>init</command> by the kernel and
+    image. It is executed as <filename>/init</filename> by the kernel and
     runs as PID 1.</para>
   </refsect1>
 

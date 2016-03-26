@@ -59,7 +59,7 @@ CLEANFILES += $(HTML_FILES)
 all: $(HTML_FILES)
 .PHONY: all
 
-web: html
+web: all
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
 	  git add *.html *.css *.png *.svg && \
