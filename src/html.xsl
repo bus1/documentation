@@ -21,6 +21,11 @@
   <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml-1_1/docbook.xsl"/>
   <xsl:output method="html" encoding="UTF-8" indent="no"/>
   <xsl:param name="generate.consistent.ids" select="1"/>
+  <xsl:param name="refentry.generate.name" select="0"/>
+  <xsl:param name="man.output.quietly" select="1"/>
+  <xsl:param name="funcsynopsis.style" select="ansi"/>
+  <xsl:param name="man.authors.section.enabled" select="0"/>
+  <xsl:param name="man.copyright.section.enabled" select="0"/>
   <xsl:param name="html.stylesheet">bus1.css</xsl:param>
 
   <!-- Add page header. -->

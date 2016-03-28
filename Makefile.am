@@ -32,11 +32,6 @@ AM_V_CP_0 = @echo "  CP      " $@;
 XSLTPROC_FLAGS = \
         --nonet \
         --xinclude \
-        --stringparam refentry.generate.name 0 \
-        --stringparam man.output.quietly 1 \
-        --stringparam funcsynopsis.style ansi \
-        --stringparam man.authors.section.enabled 0 \
-        --stringparam man.copyright.section.enabled 0 \
         --stringparam bus1.version $(VERSION)
 
 # ------------------------------------------------------------------------------
