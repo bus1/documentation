@@ -1,3 +1,50 @@
+<?xml version='1.0'?> <!--*-nxml-*-->
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<!--
+  This file is part of bus1. See COPYING for details.
+
+  bus1 is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 2.1 of the License, or
+  (at your option) any later version.
+
+  bus1 is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with bus1; If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<refentry id="org.bus1.bootup-example">
+  <refentryinfo>
+    <title>org.bus1.bootup-example</title>
+    <productname>org.bus1.bootup-example</productname>
+
+    <author>
+      <affiliation>
+        <orgname>org.bus1</orgname>
+      </affiliation>
+    </author>
+  </refentryinfo>
+
+  <refmeta>
+    <refentrytitle>org.bus1.bootup-example</refentrytitle>
+    <manvolnum>7</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>org.bus1.bootup-example</refname>
+    <refpurpose>Bootup</refpurpose>
+  </refnamediv>
+
+  <refsect1>
+    <title>A running bus1 system.</title>
+
+<screen>
 # download and install /usr tree
 $ sudo make system
 
@@ -127,3 +174,14 @@ Slot 1:
 ========================================================================================================
 
 -bash-4.3# 
+</screen>
+  </refsect1>
+
+  <refsect1>
+    <title>See Also</title>
+      <para>
+        <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+        <ulink url="https://github.com/bus1/base">Git repository</ulink>
+      </para>
+  </refsect1>
+</refentry>

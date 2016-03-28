@@ -29,6 +29,12 @@
 
     <indexentry>
       <primaryie>
+        <citerefentry><refentrytitle>org.bus1.bootup-example</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
         <ulink url="https://github.com/bus1">Git repositories</ulink>
       </primaryie>
     </indexentry>
