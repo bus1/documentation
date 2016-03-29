@@ -25,10 +25,6 @@ AM_V_XSLT = $(AM_V_XSLT_$(V))
 AM_V_XSLT_ = $(AM_V_XSLT_$(AM_DEFAULT_VERBOSITY))
 AM_V_XSLT_0 = @echo "  XSLT    " $@;
 
-AM_V_CP = $(AM_V_CP_$(V))
-AM_V_CP_ = $(AM_V_CP_$(AM_DEFAULT_VERBOSITY))
-AM_V_CP_0 = @echo "  CP      " $@;
-
 XSLTPROC_FLAGS = \
         --nonet \
         --xinclude \
