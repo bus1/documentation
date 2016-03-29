@@ -24,9 +24,6 @@ AC_DEFINE_UNQUOTED([CANONICAL_HOST], "$host", [Canonical host string.])
 
 AC_PATH_PROG([XSLTPROC], [xsltproc])
 
-AS_IF([! ln --relative --help > /dev/null 2>&1], [AC_MSG_ERROR([*** ln doesn't support --relative ***])])
-m4_pattern_forbid([^_?PKG_[A-Z_]+$],[*** pkg.m4 missing, please install pkg-config])
-
 # ------------------------------------------------------------------------------
 # report
 
