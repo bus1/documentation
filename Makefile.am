@@ -50,9 +50,16 @@ CLEANFILES += $(HTML_FILES)
 all: $(HTML_FILES)
 .PHONY: all
 
-web: all
+# we need to update the external sources before we build our pages
+git-update:
+	git pull --rebase
 	( cd ../bus1.github.io && \
 	  git pull --rebase )
+	( cd ../bus1 && \
+	  git pull --rebase )
+.PHONY: git-update
+
+web: git-update all
 	rsync -av --delete --exclude='.*' --exclude=README --exclude=CNAME html/ ../bus1.github.io/
 	( cd ../bus1.github.io && \
 	  git add *.html *.css *.png *.svg && \
