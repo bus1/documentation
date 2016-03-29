@@ -157,14 +157,14 @@ Master key encryption:  aes-wrap
 Master key (encrypted): 927c33e1bab62154d605e23f4801b94a6f270b9b40d5bb3b5573cba9030c795140e9ae2cf8162991
 Master key size:        320 bits
 Number of key slots:    2
-Slot 0:
+Slot 1:
   type UUID:            54e18c3c-3f65-4909-a536-bf7d080ff282
   UUID:                 6a4c5332-43a7-339c-c961-78d4857eed8a
   type:                 clear
     encryption:         aes-wrap
     key (encrypted):    e24d5309cd2c2f22b4b3840053d17d6b890f009135c5096a15eb14712e7ac7499a6b571d6a6229dd
     key size:           320 bits
-Slot 1:
+Slot 2:
   type UUID:            30a49386-8bbc-4e97-8412-03f50ad10621
   UUID:                 d825e33b-f332-ff01-3879-455c0152ca22
   type:                 recovery
