@@ -108,5 +108,11 @@
         <citerefentry><refentrytitle>bus1.pool</refentrytitle><manvolnum>7</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1.kernel-api</refentrytitle><manvolnum>9</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
   </indexdiv>
 </index>
