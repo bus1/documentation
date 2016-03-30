@@ -16,3 +16,10 @@ GITWEB:
 LICENSE:
         LGPLv2.1+ (LICENSE.LGPL2.1)
         See COPYING for details.
+
+ABOUT:
+        This the repository contains the documentation sources, and
+        instructions to build documentation from external repositories.
+        The created web pages are committed to the bus1.github.io
+        repository. The content of the bus1.github.io repository is
+        published at http://www.bus1.org/.
