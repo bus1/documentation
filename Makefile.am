@@ -46,7 +46,6 @@ HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard
 
 # ------------------------------------------------------------------------------
 # bus1 kerneldoc internal kernel API
-
 ../../linux/scripts/docproc:
 	( cd ../../linux && \
 	  make -f scripts/Makefile scripts/docproc )
@@ -54,7 +53,7 @@ HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard
 bus1.kernel-api.xml: ../../linux/scripts/docproc ../bus1/Documentation/DocBook/bus1.tmpl
 	$(AM_V_XSLT) SRCTREE=../bus1 KBUILD_SRC=../../linux ../../linux/scripts/docproc doc ../bus1/Documentation/DocBook/bus1.tmpl 2>/dev/null > $@
 
-html/%.html: bus1.kernel-api.xml
+html/bus1.kernel-api.html: bus1.kernel-api.xml
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
 HTML_FILES += html/bus1.kernel-api.html
@@ -62,7 +61,7 @@ HTML_FILES += html/bus1.kernel-api.html
 # ------------------------------------------------------------------------------
 CLEANFILES += $(HTML_FILES)
 
-all: bus1.kernel-api.xml $(HTML_FILES)
+all: $(HTML_FILES)
 .PHONY: all
 
 # we need to update the external sources before we build our pages
