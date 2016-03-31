@@ -18,7 +18,7 @@
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml-1_1/docbook.xsl"/>
+  <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl"/>
   <xsl:output method="html" encoding="UTF-8" indent="no"/>
   <xsl:param name="generate.consistent.ids" select="1"/>
   <xsl:param name="refentry.generate.name" select="0"/>
@@ -27,9 +27,6 @@
   <xsl:param name="man.authors.section.enabled" select="0"/>
   <xsl:param name="man.copyright.section.enabled" select="0"/>
   <xsl:param name="html.stylesheet">bus1.css</xsl:param>
-
-  <!-- work around this https://sourceforge.net/p/docbook/bugs/1220/ -->
-  <xsl:param name="funcsynopsis.decoration" select="0"/>
 
   <!-- Add page header. -->
   <xsl:template name="user.head.content">
