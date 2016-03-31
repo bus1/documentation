@@ -1,0 +1,91 @@
+<?xml version='1.0'?> <!--*-nxml-*-->
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<!--
+  This file is part of bus1. See COPYING for details.
+
+  bus1 is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 2.1 of the License, or
+  (at your option) any later version.
+
+  bus1 is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with bus1; If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<refentry id="bus1-client">
+  <refentryinfo>
+    <title>org.bus1.administrator</title>
+    <productname>org.bus1.administrator</productname>
+
+    <author>
+      <affiliation>
+        <orgname>org.bus1</orgname>
+      </affiliation>
+    </author>
+  </refentryinfo>
+
+  <refmeta>
+    <refentrytitle>bus1-client</refentrytitle>
+    <manvolnum>3</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>bus1-client</refname>
+    <refpurpose>Wrapper of the Bus1 Kernel API</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <funcsynopsis>
+      <funcsynopsisinfo>#include &lt;org.bus1/bus1-client.h&gt;</funcsynopsisinfo>
+    </funcsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+    <para>The bus1-client object is a small, direct wrapper of the bus1 kernel
+    API. It allows direct access to all bus1 client features, but additionally
+    provides a limited set of helpers to avoid dealing with API extensions,
+    client pools, and ioctl calling conventions.</para>
+
+    <para>See
+    <citerefentry><refentrytitle>bus1_client_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_new_from_path</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_get_pool_size</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_get_pool</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_ioctl</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_query</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_mmap</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_init</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_clone</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_node_destroy</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_handle_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_slice_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_slice_from_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+    <citerefentry><refentrytitle>bus1_client_slice_to_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+    for more information about the functions available.</para>
+
+    <para>The bus1-client API is designed for threaded access. Apart from constructors
+    and destructors, any function can be called in parallel from multiple threads
+    without any synchronization necessary (neither internally nor externally). They
+    map 1-to-1 to the kernel API, but hide the ioctl marshaling. Furthermore, the
+    API is designed to allow *multiple* different contexts on the same file-descriptor,
+    without knowing about each other.</para>
+  </refsect1>
+
+  <refsect1>
+    <title>See Also</title>
+    <para>
+        <citerefentry><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+        <ulink url="https://github.com/bus1/bus1/blob/master/tools/testing/selftests/bus1/bus1-client.h">bus1-client.h in the git repository</ulink>
+    </para>
+  </refsect1>
+</refentry>

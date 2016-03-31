@@ -78,6 +78,14 @@
     </indexentry>
   </indexdiv>
 
+  <indexdiv><title>bus1-client Kernel API Wrapper</title>
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+  </indexdiv>
+
   <indexdiv><title>Kernel Module</title>
     <indexentry>
       <primaryie>
