@@ -28,6 +28,9 @@
   <xsl:param name="man.copyright.section.enabled" select="0"/>
   <xsl:param name="html.stylesheet">bus1.css</xsl:param>
 
+  <!-- work around this https://sourceforge.net/p/docbook/bugs/1220/ -->
+  <xsl:param name="funcsynopsis.decoration" select="0"/>
+
   <!-- Add page header. -->
   <xsl:template name="user.head.content">
     <link rel="icon" href="bus1.png" type="image/png"/>
@@ -45,7 +48,7 @@
     <header>
       <a>
         <xsl:attribute name="href">
-          <xsl:text>/</xsl:text>
+          <xsl:text>index.html</xsl:text>
         </xsl:attribute>
         <img src="bus1.svg" alt="bus1" style="width:48px;height:48px;"/>
       </a>

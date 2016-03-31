@@ -1,0 +1,148 @@
+<?xml version='1.0'?> <!--*-nxml-*-->
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<!--
+  This file is part of bus1. See COPYING for details.
+
+  bus1 is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 2.1 of the License, or
+  (at your option) any later version.
+
+  bus1 is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with bus1; If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<refentry id="bus1_client_new_from_fd">
+  <refmeta>
+    <refentrytitle>bus1_client_new_from_fd</refentrytitle>
+    <manvolnum>3</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>bus1-client</refname>
+
+    <refpurpose>Wrapper of the bus1 kernel API</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <funcsynopsis>
+      <funcsynopsisinfo>#include &lt;org.bus1/bus1-client.h&gt;</funcsynopsisinfo>
+
+      <funcsynopsisinfo>struct bus1_client;</funcsynopsisinfo>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_new_from_fd</function></funcdef>
+        <paramdef>struct bus1_client **<parameter>clientp</parameter></paramdef>
+        <paramdef>int <parameter>fd</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_new_from_path</function></funcdef>
+        <paramdef>struct bus1_client **<parameter>clientp</parameter></paramdef>
+        <paramdef>const char *<parameter>path</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>struct bus1_client *<function>bus1_client_free</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_get_fd</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>size_t <function>bus1_client_get_pool_size</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>void *<function>bus1_client_get_pool</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_ioctl</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>unsigned int <parameter>cmd</parameter></paramdef>
+        <paramdef>void *<parameter>arg</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_query</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>size_t *<parameter>pool_sizep</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_mmap</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>size_t <parameter>pool_size</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_init</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_clone</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>uint64_t *<parameter>handlep</parameter></paramdef>
+        <paramdef>int *<parameter>fdp</parameter></paramdef>
+        <paramdef>size_t <parameter>pool_size</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_node_destroy</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>uint64_t <parameter>handle</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_handle_release</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>uint64_t <parameter>handle</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>bus1_client_slice_release</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>uint64_t <parameter>offset</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>void * <function>bus1_client_slice_from_offset</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>uint64_t <parameter>offset</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>uint64_t <function>bus1_client_slice_to_offset</function></funcdef>
+        <paramdef>struct bus1_client *<parameter>client</parameter></paramdef>
+        <paramdef>const void *<parameter>slice</parameter></paramdef>
+      </funcprototype>
+    </funcsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+  </refsect1>
+
+  <refsect1>
+    <title>See Also</title>
+    <para>
+        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+        <ulink url="https://github.com/bus1/bus1/blob/master/tools/testing/selftests/bus1/bus1-client.h">bus1-client.h in the git repository</ulink>
+    </para>
+  </refsect1>
+</refentry>

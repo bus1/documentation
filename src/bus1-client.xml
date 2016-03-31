@@ -22,7 +22,7 @@
 <refentry id="bus1-client">
   <refmeta>
     <refentrytitle>bus1-client</refentrytitle>
-    <manvolnum>3</manvolnum>
+    <manvolnum>7</manvolnum>
   </refmeta>
 
   <refnamediv>
@@ -43,25 +43,6 @@
     provides a limited set of helpers to avoid dealing with API extensions,
     client pools, and ioctl calling conventions.</para>
 
-    <para>See
-    <citerefentry><refentrytitle>bus1_client_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_new_from_path</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_get_pool_size</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_get_pool</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_ioctl</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_query</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_mmap</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_init</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_clone</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_node_destroy</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_handle_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_slice_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_slice_from_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
-    <citerefentry><refentrytitle>bus1_client_slice_to_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
-    for more information about the functions available.</para>
-
     <para>The bus1-client API is designed for threaded access. Apart from constructors
     and destructors, any function can be called in parallel from multiple threads
     without any synchronization necessary (neither internally nor externally). They
@@ -73,6 +54,25 @@
   <refsect1>
     <title>See Also</title>
     <para>
+        <citerefentry><refentrytitle>bus1_client_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_new_from_path</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_get_pool_size</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_get_pool</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_ioctl</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_query</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_mmap</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_init</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_clone</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_node_destroy</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_handle_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_slice_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_slice_from_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1_client_slice_to_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+        <citerefentry><refentrytitle>bus1_client_slice_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+        <citerefentry><refentrytitle>bus1_client_slice_from_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+        <citerefentry><refentrytitle>bus1_client_slice_to_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
         <citerefentry><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
         <ulink url="https://github.com/bus1/bus1/blob/master/tools/testing/selftests/bus1/bus1-client.h">bus1-client.h in the git repository</ulink>
     </para>

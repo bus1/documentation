@@ -81,7 +81,13 @@
   <indexdiv><title>bus1-client Kernel API Wrapper</title>
     <indexentry>
       <primaryie>
-        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
   </indexdiv>
