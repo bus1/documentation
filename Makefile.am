@@ -30,19 +30,22 @@ XSLTPROC_FLAGS = \
         --xinclude \
         --stringparam bus1.version $(VERSION)
 
+%.html: %.xml src/html.xsl
+	$(AM_V_XSLT)$(XSLTPROC) $(XSLTPROC_FLAGS) -o $@ src/html.xsl $<
+
 # ------------------------------------------------------------------------------
 # documentation
 html/%.html: src/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-HTML_FILES = $(patsubst src/%.xml,html/%.html,$(wildcard src/*.xml))
+XML_FILES = $(wildcard src/*.xml)
 
 # ------------------------------------------------------------------------------
 # bus1 kernel module documentation
 html/%.html: ../bus1/Documentation/bus1/%.xml src/html.xsl
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard ../bus1/Documentation/bus1/*.xml))
+XML_FILES += $(wildcard ../bus1/Documentation/bus1/*.xml)
 
 # ------------------------------------------------------------------------------
 # bus1 kerneldoc internal kernel API
@@ -53,14 +56,17 @@ HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard
 bus1.kernel-api.xml: ../../linux/scripts/docproc ../bus1/Documentation/DocBook/bus1.tmpl
 	$(AM_V_XSLT) SRCTREE=../bus1 KBUILD_SRC=../../linux ../../linux/scripts/docproc doc ../bus1/Documentation/DocBook/bus1.tmpl 2>/dev/null > $@
 
-CLEANFILES += bus1.kernel-api.xml
-
 html/bus1.kernel-api.html: bus1.kernel-api.xml
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
-HTML_FILES += html/bus1.kernel-api.html
+XML_FILES += bus1.kernel-api.xml
+
+CLEANFILES += bus1.kernel-api.xml
 
 # ------------------------------------------------------------------------------
+# strip source directory, replace .xml with .html, add html/ target directory
+HTML_FILES = $(addprefix html/,$(patsubst %.xml,%.html,$(notdir $(XML_FILES))))
+
 CLEANFILES += $(HTML_FILES)
 
 all: $(HTML_FILES)
