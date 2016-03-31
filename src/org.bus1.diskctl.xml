@@ -20,17 +20,6 @@
 -->
 
 <refentry id="org.bus1.diskctl">
-  <refentryinfo>
-    <title>org.bus1.diskctl</title>
-    <productname>org.bus1.diskctl</productname>
-
-    <author>
-      <affiliation>
-        <orgname>org.bus1</orgname>
-      </affiliation>
-    </author>
-  </refentryinfo>
-
   <refmeta>
     <refentrytitle>org.bus1.diskctl</refentrytitle>
     <manvolnum>1</manvolnum>

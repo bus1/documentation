@@ -20,17 +20,6 @@
 -->
 
 <refentry id="org.bus1.rdinit">
-  <refentryinfo>
-    <title>org.bus1.rdinit</title>
-    <productname>org.bus1.rdinit</productname>
-
-    <author>
-      <affiliation>
-        <orgname>org.bus1</orgname>
-      </affiliation>
-    </author>
-  </refentryinfo>
-
   <refmeta>
     <refentrytitle>org.bus1.rdinit</refentrytitle>
     <manvolnum>1</manvolnum>

@@ -20,17 +20,6 @@
 -->
 
 <refentry id="org.bus1.bootup-example">
-  <refentryinfo>
-    <title>org.bus1.bootup-example</title>
-    <productname>org.bus1.bootup-example</productname>
-
-    <author>
-      <affiliation>
-        <orgname>org.bus1</orgname>
-      </affiliation>
-    </author>
-  </refentryinfo>
-
   <refmeta>
     <refentrytitle>org.bus1.bootup-example</refentrytitle>
     <manvolnum>7</manvolnum>
