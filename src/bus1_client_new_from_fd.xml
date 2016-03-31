@@ -26,8 +26,25 @@
   </refmeta>
 
   <refnamediv>
-    <refname>bus1-client</refname>
-
+    <refname>bus1_client_new_from_fd</refname>
+    <refname>bus1_client_new_from_path</refname>
+    <refname>bus1_client_free</refname>
+    <refname>bus1_client_get_fd</refname>
+    <refname>bus1_client_get_pool_size</refname>
+    <refname>bus1_client_get_pool</refname>
+    <refname>bus1_client_ioctl</refname>
+    <refname>bus1_client_query</refname>
+    <refname>bus1_client_mmap</refname>
+    <refname>bus1_client_init</refname>
+    <refname>bus1_client_clone</refname>
+    <refname>bus1_client_node_destroy</refname>
+    <refname>bus1_client_handle_release</refname>
+    <refname>bus1_client_slice_release</refname>
+    <refname>bus1_client_slice_from_offset</refname>
+    <refname>bus1_client_slice_to_offset</refname>
+    <refname>bus1_client_slice_release</refname>
+    <refname>bus1_client_slice_from_offset</refname>
+    <refname>bus1_client_slice_to_offset</refname>
     <refpurpose>Wrapper of the bus1 kernel API</refpurpose>
   </refnamediv>
 
@@ -135,6 +152,7 @@
 
   <refsect1>
     <title>Description</title>
+    <para>TODO</para>
   </refsect1>
 
   <refsect1>
