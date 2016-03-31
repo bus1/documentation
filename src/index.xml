@@ -90,6 +90,96 @@
         <citerefentry><refentrytitle>bus1_client_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_new_from_path</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_get_pool_size</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_get_pool</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_ioctl</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_query</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_mmap</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_init</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_clone</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_node_destroy</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_handle_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_slice_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_slice_from_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>bus1_client_slice_to_offset</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+      </primaryie>
+    </indexentry>
   </indexdiv>
 
   <indexdiv><title>Kernel Module</title>

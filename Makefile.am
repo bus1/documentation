@@ -64,12 +64,22 @@ XML_FILES += bus1.kernel-api.xml
 CLEANFILES += bus1.kernel-api.xml
 
 # ------------------------------------------------------------------------------
+# extract refname list from XMl files and create alias symlinks
+aliases: $(XML_FILES)
+	$(AM_V_at)for xml in $(XML_FILES); do \
+		$(XSLTPROC) $(XSLTPROC_FLAGS) src/refname-list.xsl $$xml | while read file alias; do \
+			ln -sf $$file.html html/$$alias.html; \
+		done \
+	done
+.PHONY: aliases
+
+# ------------------------------------------------------------------------------
 # strip source directory, replace .xml with .html, add html/ target directory
 HTML_FILES = $(addprefix html/,$(patsubst %.xml,%.html,$(notdir $(XML_FILES))))
 
-CLEANFILES += $(HTML_FILES)
+CLEANFILES += $(wildcard html/*.html)
 
-all: $(HTML_FILES)
+all: $(HTML_FILES) aliases
 .PHONY: all
 
 # we need to update the external sources before we build our pages
