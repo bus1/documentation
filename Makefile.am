@@ -53,6 +53,8 @@ HTML_FILES += $(patsubst ../bus1/Documentation/bus1/%.xml,html/%.html,$(wildcard
 bus1.kernel-api.xml: ../../linux/scripts/docproc ../bus1/Documentation/DocBook/bus1.tmpl
 	$(AM_V_XSLT) SRCTREE=../bus1 KBUILD_SRC=../../linux ../../linux/scripts/docproc doc ../bus1/Documentation/DocBook/bus1.tmpl 2>/dev/null > $@
 
+CLEANFILES += bus1.kernel-api.xml
+
 html/bus1.kernel-api.html: bus1.kernel-api.xml
 	$(AM_V_XSLT)$(XSLTPROC) -o $@ $(XSLTPROC_FLAGS) src/html.xsl $<
 
