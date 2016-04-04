@@ -1,0 +1,382 @@
+<?xml version='1.0'?> <!--*-nxml-*-->
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<!--
+  This file is part of bus1. See COPYING for details.
+
+  bus1 is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 2.1 of the License, or
+  (at your option) any later version.
+
+  bus1 is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with bus1; If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<refentry id="bus1_peer_new">
+  <refmeta>
+    <refentrytitle>bus1_peer_new</refentrytitle>
+    <manvolnum>3</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>B1Handle</refname>
+    <refname>B1Interface</refname>
+    <refname>B1Message</refname>
+    <refname>B1Node</refname>
+    <refname>B1Peer</refname>
+    <refname>B1Slot</refname>
+    <refname>B1NodeFn</refname>
+    <refname>B1SlotFn</refname>
+    <refname>b1_peer_new</refname>
+    <refname>b1_peer_new_from_fd</refname>
+    <refname>b1_peer_ref</refname>
+    <refname>b1_peer_unref</refname>
+    <refname>b1_peer_get_fd</refname>
+    <refname>b1_peer_send</refname>
+    <refname>b1_peer_recv</refname>
+    <refname>b1_peer_clone</refname>
+    <refname>b1_slot_free</refname>
+    <refname>b1_slot_get_userdata</refname>
+    <refname>b1_message_new_call</refname>
+    <refname>b1_message_new_reply</refname>
+    <refname>b1_message_new_error</refname>
+    <refname>b1_message_ref</refname>
+    <refname>b1_message_unref</refname>
+    <refname>b1_message_is_sealed</refname>
+    <refname>b1_message_get_type</refname>
+    <refname>b1_message_dispatch</refname>
+    <refname>b1_message_get_destination_node</refname>
+    <refname>b1_message_get_reply_handle</refname>
+    <refname>b1_message_get_uid</refname>
+    <refname>b1_message_get_gid</refname>
+    <refname>b1_message_get_pid</refname>
+    <refname>b1_message_get_tid</refname>
+    <refname>b1_message_peek_count</refname>
+    <refname>b1_message_peek_type</refname>
+    <refname>b1_message_enter</refname>
+    <refname>b1_message_exit</refname>
+    <refname>b1_message_readv</refname>
+    <refname>b1_message_rewind</refname>
+    <refname>b1_message_beginv</refname>
+    <refname>b1_message_end</refname>
+    <refname>b1_message_writev</refname>
+    <refname>b1_message_seal</refname>
+    <refname>b1_message_get_handle</refname>
+    <refname>b1_message_get_fd</refname>
+    <refname>b1_node_new</refname>
+    <refname>b1_node_free</refname>
+    <refname>b1_node_get_peer</refname>
+    <refname>b1_node_get_handle</refname>
+    <refname>b1_node_get_userdata</refname>
+    <refname>b1_node_set_destroy_fn</refname>
+    <refname>b1_node_implement</refname>
+    <refname>b1_node_release</refname>
+    <refname>b1_node_destroy</refname>
+    <refname>b1_handle_ref</refname>
+    <refname>b1_handle_unref</refname>
+    <refname>b1_handle_get_peer</refname>
+    <refname>b1_handle_subscribe</refname>
+    <refname>b1_interface_new</refname>
+    <refname>b1_interface_ref</refname>
+    <refname>b1_interface_unref</refname>
+    <refname>b1_interface_add_member</refname>
+    <refname>b1_peer_reply</refname>
+    <refname>b1_peer_unrefp</refname>
+    <refname>b1_message_unrefp</refname>
+    <refname>b1_node_freep</refname>
+    <refname>b1_interface_unrefp</refname>
+    <refname>b1_message_read</refname>
+    <refname>b1_message_begin</refname>
+    <refname>b1_message_write</refname>
+
+    <refpurpose>Bus1 API</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <funcsynopsis>
+      <funcsynopsisinfo>#include &lt;org.bus1/b1-peer.h&gt;</funcsynopsisinfo>
+
+      <funcsynopsisinfo>B1Handle</funcsynopsisinfo>
+      <funcsynopsisinfo>B1Interface</funcsynopsisinfo>
+      <funcsynopsisinfo>B1Message</funcsynopsisinfo>
+      <funcsynopsisinfo>B1Node</funcsynopsisinfo>
+      <funcsynopsisinfo>B1Peer</funcsynopsisinfo>
+      <funcsynopsisinfo>B1Slot</funcsynopsisinfo>
+      <funcsynopsisinfo>B1NodeFn</funcsynopsisinfo>
+      <funcsynopsisinfo>B1SlotFn</funcsynopsisinfo>
+
+      <funcprototype>
+        <funcdef>int <function>b1_peer_new</function></funcdef>
+        <paramdef>B1Peer **<parameter>peerp</parameter></paramdef>
+        <paramdef>const char *<parameter>path</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef>int <function>b1_peer_new_from_fd</function></funcdef>
+        <paramdef>B1Peer **<parameter>peerp</parameter></paramdef>
+        <paramdef>int <parameter>fd</parameter></paramdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_new</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_new_from_fd</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_ref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_unref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_get_fd</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_send</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_recv</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_clone</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_slot_free</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_slot_get_userdata</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_new_call</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_new_reply</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_new_error</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_ref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_unref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_is_sealed</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_type</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_dispatch</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_destination_node</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_reply_handle</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_uid</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_gid</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_pid</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_tid</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_peek_count</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_peek_type</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_enter</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_exit</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_readv</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_rewind</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_beginv</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_end</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_writev</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_seal</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_handle</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_get_fd</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_new</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_free</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_get_peer</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_get_handle</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_get_userdata</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_set_destroy_fn</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_implement</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_release</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_destroy</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_handle_ref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_handle_unref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_handle_get_peer</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_handle_subscribe</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_interface_new</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_interface_ref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_interface_unref</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_interface_add_member</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_reply</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_peer_unrefp</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_unrefp</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_node_freep</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_interface_unrefp</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_read</function></funcdef>
+      </funcprototype>
+
+      <funcprototype>
+        <funcdef><function>b1_message_begin</function></funcdef>
+      </funcprototype>
+    </funcsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+    <para>TODO</para>
+  </refsect1>
+
+  <refsect1>
+    <title>See Also</title>
+    <para>
+        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+        <citerefentry><refentrytitle>bus1</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+        <ulink url="https://github.com/bus1/bus1/blob/master/tools/testing/selftests/bus1/bus1-client.h">bus1-client.h in the git repository</ulink>
+    </para>
+  </refsect1>
+</refentry>

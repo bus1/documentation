@@ -78,6 +78,428 @@
     </indexentry>
   </indexdiv>
 
+  <indexdiv><title>Bus1 Library API</title>
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1-peer</refentrytitle><manvolnum>7</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Handle</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Interface</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Message</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Node</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Peer</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1Slot</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1NodeFn</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>B1SlotFn</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_new</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_new_from_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_ref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_unref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_send</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_recv</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_clone</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_slot_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_slot_get_userdata</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_new_call</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_new_reply</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_new_error</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_ref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_unref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_is_sealed</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_type</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_dispatch</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_destination_node</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_reply_handle</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_uid</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_gid</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_pid</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_tid</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_peek_count</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_peek_type</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_enter</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_exit</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_readv</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_rewind</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_beginv</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_end</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_writev</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_seal</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_handle</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_get_fd</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_new</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_free</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_get_peer</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_get_handle</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_get_userdata</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_set_destroy_fn</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_implement</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_release</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_destroy</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_handle_ref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_handle_unref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_handle_get_peer</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_handle_subscribe</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_interface_new</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_interface_ref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_interface_unref</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_interface_add_member</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_reply</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_peer_unrefp</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_unrefp</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_node_freep</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_interface_unrefp</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_read</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_begin</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+
+    <indexentry>
+      <primaryie>
+        <citerefentry><refentrytitle>b1_message_write</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+      </primaryie>
+    </indexentry>
+  </indexdiv>
+
   <indexdiv><title>bus1-client Kernel API Wrapper</title>
     <indexentry>
       <primaryie>

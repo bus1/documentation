@@ -52,7 +52,7 @@
     <funcsynopsis>
       <funcsynopsisinfo>#include &lt;org.bus1/bus1-client.h&gt;</funcsynopsisinfo>
 
-      <funcsynopsisinfo>struct bus1_client;</funcsynopsisinfo>
+      <funcsynopsisinfo>struct bus1_client</funcsynopsisinfo>
 
       <funcprototype>
         <funcdef>int <function>bus1_client_new_from_fd</function></funcdef>
