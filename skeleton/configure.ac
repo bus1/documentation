@@ -16,8 +16,9 @@ AC_CONFIG_MACRO_DIR([build/m4])
 AC_CONFIG_HEADERS([build/config.h])
 AC_CONFIG_AUX_DIR([build/build-aux])
 
-# AC_PROG_CC sets default CFLAGS which conflict with our own configuration
-CFLAGS_SAVE=$CFLAGS
+# suppress conflicting defaults
+CFLAGS=${CFLAGS:-""}
+CXXFLAGS=${CXXFLAGS:-""}
 
 AC_USE_SYSTEM_EXTENSIONS
 AC_SYS_LARGEFILE
@@ -27,8 +28,6 @@ AM_SILENT_RULES([yes])
 AC_CANONICAL_HOST
 AC_DEFINE_UNQUOTED([CANONICAL_HOST], "$host", [Canonical host string.])
 AC_PROG_CC_C99
-
-CFLAGS=$CFLAGS_SAVE
 
 m4_pattern_forbid([^_?PKG_[A-Z_]+$],[*** pkg.m4 missing, please install pkg-config])
 
