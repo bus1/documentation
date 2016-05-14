@@ -105,30 +105,6 @@
 
     <indexentry>
       <primaryie>
-        <citerefentry><refentrytitle>bus1.message</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>bus1.node</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>bus1.peer</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>bus1.pool</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
         <citerefentry><refentrytitle>bus1.kernel-api</refentrytitle><manvolnum>9</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
