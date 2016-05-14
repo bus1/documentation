@@ -47,7 +47,7 @@
         <xsl:attribute name="href">
           <xsl:text>index.html</xsl:text>
         </xsl:attribute>
-        <img src="bus1.svg" alt="bus1" style="width:48px;height:48px;"/>
+        <img src="bus1.svg" alt="bus1" style="width:64px;height:64px;"/>
       </a>
 
       <span class="version">
