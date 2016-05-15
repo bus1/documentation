@@ -23,14 +23,20 @@
   <para>Friendly IPC for Linux</para>
 
   <indexdiv><title>Overview</title>
-    <para>Bus1 is a subsystem to provide object-oriented IPC on Linux. It is a
-    lightweight and scalable way for services and operating system tasks to
-    share signals, data and resources; while at the same time allowing modularization,
-    privilege separation, information hiding and isolation.</para>
+    <para>Bus1 is a subsystem to provide object-oriented Inter-Process Communication
+    on Linux. It is a lightweight and scalable way for services and operating system
+    tasks to share signals, data and resources; while at the same time allowing
+    modularization, privilege separation, information hiding and isolation.</para>
 
     <para>Bus1 services communicate over well-defined interfaces with a strongly-typed
     language. They allow a programming-language independent way to use objects in
     environments different from where they were created.</para>
+
+    <para>Bus1 uses lightweight handles to represent objects. It supports single-copy
+    data transfer, message multicast and gives global-order guarantees.</para>
+
+    <para>Bus1 itself does not maintain any globally shared state, all references to
+    objects need to be explicitely handed out to be visible to a peer.</para>
 
     <indexentry>
       <primaryie>
