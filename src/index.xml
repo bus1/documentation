@@ -40,57 +40,7 @@
 
     <indexentry>
       <primaryie>
-        <citerefentry><refentrytitle>org.bus1.bootstrap</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.bootup-example</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
         <ulink url="https://github.com/bus1">Git repositories</ulink>
-      </primaryie>
-    </indexentry>
-  </indexdiv>
-
-  <indexdiv><title>Base Services</title>
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.activator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.administrator</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.coredump</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.devices</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.init</refentrytitle><manvolnum>1</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>org.bus1.rdinit</refentrytitle><manvolnum>1</manvolnum></citerefentry>
       </primaryie>
     </indexentry>
   </indexdiv>
