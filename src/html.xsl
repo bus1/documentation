@@ -69,10 +69,16 @@
   </xsl:template>
 
   <!-- External links. -->
-  <xsl:template match="citerefentry[refentrytitle='ioctl'] |
+  <xsl:template match="citerefentry[refentrytitle='close'] |
+                       citerefentry[refentrytitle='epoll'] |
+                       citerefentry[refentrytitle='ioctl'] |
                        citerefentry[refentrytitle='mmap'] |
                        citerefentry[refentrytitle='munmap'] |
-                       citerefentry[refentrytitle='open']">
+                       citerefentry[refentrytitle='open'] |
+                       citerefentry[refentrytitle='poll'] |
+                       citerefentry[refentrytitle='ppoll'] |
+                       citerefentry[refentrytitle='pselect'] |
+                       citerefentry[refentrytitle='select']">
     <a>
       <xsl:attribute name="href">
         <xsl:text>http://linux.die.net/man/</xsl:text>
