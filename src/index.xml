@@ -28,10 +28,6 @@
     tasks to share signals, data and resources; while at the same time allowing
     modularization, privilege separation, information hiding and isolation.</para>
 
-    <para>Bus1 services communicate over well-defined interfaces with a strongly-typed
-    language. They allow a programming-language independent way to use objects in
-    environments different from where they were created.</para>
-
     <para>Bus1 uses lightweight handles to represent objects. It supports single-copy
     data transfer, message multicast and gives global-order guarantees.</para>
 
