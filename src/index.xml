@@ -20,7 +20,7 @@
 -->
 
 <index><title>Bus1</title>
-  <para>Friendly IPC for Linux</para>
+  <para>Capability-based IPC for Linux</para>
 
   <indexdiv><title>Overview</title>
     <para>Bus1 is a subsystem to provide object-oriented Inter-Process Communication
