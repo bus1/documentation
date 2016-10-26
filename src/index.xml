@@ -41,22 +41,6 @@
     </indexentry>
   </indexdiv>
 
-  <indexdiv><title>C Library API</title>
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>b1-peer</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-  </indexdiv>
-
-  <indexdiv><title>Kernel API Wrapper</title>
-    <indexentry>
-      <primaryie>
-        <citerefentry><refentrytitle>bus1-client</refentrytitle><manvolnum>7</manvolnum></citerefentry>
-      </primaryie>
-    </indexentry>
-  </indexdiv>
-
   <indexdiv><title>Kernel Module</title>
     <indexentry>
       <primaryie>
