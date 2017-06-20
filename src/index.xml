@@ -32,7 +32,7 @@
     data transfer, message multicast and gives global-order guarantees.</para>
 
     <para>Bus1 itself does not maintain any globally shared state, all references to
-    objects need to be explicitely handed out to be visible to a peer.</para>
+    objects need to be explicitly handed out to be visible to a peer.</para>
 
     <indexentry>
       <primaryie>
